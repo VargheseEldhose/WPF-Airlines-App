@@ -1,0 +1,26 @@
+﻿<Window x:Name="LgnWindow" x:Class="MidTerm.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MidTerm"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800" Closing="LgnWindow_Closing">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="LBLuser" Content="Username" HorizontalAlignment="Left" Margin="229,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="49" Width="129" FontSize="18"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="242,136,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="56" Width="102" FontSize="18"/>
+        <TextBox x:Name="TbUser" HorizontalAlignment="Left" Margin="363,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="239" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="23" Grid.ColumnSpan="2"/>
+        <PasswordBox x:Name="PBpassword" HorizontalAlignment="Left" Margin="363,151,0,0" VerticalAlignment="Top" Width="239" Height="26" Grid.ColumnSpan="2"/>
+        <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Left" Margin="242,75,0,0" VerticalAlignment="Top" Height="34" Width="138" FontSize="16" Click="BtnLogin_Click" Grid.Row="1" Background="#FFF6F3F3"/>
+        <Button x:Name="BtnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="66,73,0,0" VerticalAlignment="Top" Height="36" Width="151" FontSize="16" Click="BtnCancel_Click" Grid.Column="1" Grid.Row="1" Background="#FFFCFAFA"/>
+
+    </Grid>
+</Window>

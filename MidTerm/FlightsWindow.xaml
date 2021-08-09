@@ -1,0 +1,61 @@
+﻿<Window x:Name="FltWindow" x:Class="MidTerm.FlightsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MidTerm"
+        mc:Ignorable="d"
+        Title="FlightsWindow" Height="450" Width="800" Closing="FltWindow_Closing_1">
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem x:Name="InsertFlight" Click="BtnAddFlights_Click" Header="Insert"></MenuItem>
+            <MenuItem x:Name="UpdateFlight" Click="BtnUpdateFlights_Click" Header="Update"></MenuItem>
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DockPanel LastChildFill="False" Margin="0,0,0,184" Grid.ColumnSpan="2">
+            <Menu x:Name="Flightwindowmenu" Width="797" Height="33">
+                <MenuItem x:Name="File" Header="File">
+                    <MenuItem x:Name="New" Header="New"/>
+                    <MenuItem x:Name="Save" Header="Save"/>
+                    <MenuItem x:Name="Quit" Header="Quit" Click="Quit_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="Edit" Header="Edit">
+                    <MenuItem x:Name="InsertMenuF" Header="Insert" Click="InsertMenuF_Click"/>
+                    <MenuItem x:Name="Updatemenuf" Header="Update" Click="Updatemenuf_Click"/>
+                    <MenuItem x:Name="DeleteMenuf" Header="Delete" Click="DeleteMenuf_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="Help1C" Header="Help" Click="Help1C_Click"/>
+                <MenuItem x:Name="Home" Header="HomepageOnly">
+                    <MenuItem x:Name="ViewCustmenuM" Header="View Customers" Click="ViewCustmenuM_Click"/>
+                    <MenuItem x:Name="viewairmenu2" Header="View Airlines" Click="viewairmenu2_Click"/>
+                    <MenuItem x:Name="viewflightsmenu4" Header="View Flights" Click="viewflightsmenu4_Click"/>
+                    <MenuItem x:Name="viewpassmenu4" Header="View Passengers" Click="viewpassmenu4_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <ListBox x:Name="LBFlights" Margin="0,33,0,0" ItemsSource="{Binding}" SelectionChanged="LBFlights_SelectionChanged"/>
+        <Label Content="Departure City" Grid.Column="1" HorizontalAlignment="Left" Margin="90,55,0,0" VerticalAlignment="Top"/>
+        <Label Content="Destination City" Grid.Column="1" HorizontalAlignment="Left" Margin="83,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Departure Time" Grid.Column="1" HorizontalAlignment="Left" Margin="83,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Flight time" Grid.Column="1" HorizontalAlignment="Left" Margin="107,145,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBDeptCity" Grid.Column="1" HorizontalAlignment="Left" Margin="203,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TBDestCity" Grid.Column="1" HorizontalAlignment="Left" Margin="203,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TBDeptTime" Grid.Column="1" HorizontalAlignment="Left" Margin="203,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.463,-0.954"/>
+        <TextBox x:Name="TBFlightTime" Grid.Column="1" HorizontalAlignment="Left" Margin="203,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="BtnAddFlights" Content="Add" Grid.Column="1" HorizontalAlignment="Left" Margin="84,176,0,0" VerticalAlignment="Top" Width="46" Click="BtnAddFlights_Click"/>
+        <Button x:Name="BtnUpdateFlights" Content="Update" Grid.Column="1" HorizontalAlignment="Left" Margin="282,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,1.024" Width="52" Click="BtnUpdateFlights_Click"/>
+        <Button x:Name="BtnDeleteFlights" Content="Delete" Grid.Column="1" HorizontalAlignment="Left" Margin="174,10,0,167" Width="95" Click="BtnDeleteFlights_Click" Grid.Row="1"/>
+        <Label Content="AirLineID" Grid.Column="1" HorizontalAlignment="Left" Margin="119,32,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBAirlineID" Grid.Column="1" HorizontalAlignment="Left" Margin="203,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

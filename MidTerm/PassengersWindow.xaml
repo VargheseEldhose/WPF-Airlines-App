@@ -1,0 +1,56 @@
+﻿<Window x:Name="PassWind" x:Class="MidTerm.PassengersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MidTerm"
+        mc:Ignorable="d"
+        Title="PassengersWindow" Height="450" Width="800" Closing="PassWind_Closing">
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem x:Name="InsertPassenger" Click="BtnAdd_Click" Header="Insert"></MenuItem>
+            <MenuItem x:Name="UpdatePassenger" Click="BtnUpdate_Click" Header="Update"></MenuItem>
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel LastChildFill="False" Margin="0,0,0,191" Grid.ColumnSpan="3">
+            <Menu x:Name="MenuPassenger" Width="796" Height="21" Margin="0,-4,0,0">
+                <MenuItem x:Name="File" Header="File">
+                    <MenuItem x:Name="New" Header="New"/>
+                    <MenuItem x:Name="Save" Header="Save"/>
+                    <MenuItem x:Name="Quit" Header="Quit" Click="Quit_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="Edit" Header="Edit">
+                    <MenuItem x:Name="InsertPassM" Header="Insert" Click="InsertPassM_Click"/>
+                    <MenuItem x:Name="UpdateM" Header="Update" Click="UpdateM_Click"/>
+                    <MenuItem x:Name="DeletePassM" Header="Delete" Click="DeletePassM_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="HelpP" Header="Help" Click="HelpP_Click"/>
+                <MenuItem x:Name="Homepage" Header="HomepageOnly">
+                    <MenuItem x:Name="ViewCustMenu3" Header="View Customer" Click="ViewCustMenu3_Click"/>
+                    <MenuItem x:Name="ViewAirLineMenu2" Header="View Airline" Click="ViewAirLineMenu2_Click"/>
+                    <MenuItem x:Name="ViewFlightMenu3" Header="View Flights" Click="ViewFlightMenu3_Click"/>
+                    <MenuItem x:Name="ViewPassmenu4" Header="View Passenger" Click="ViewPassmenu4_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <ListBox x:Name="LBPassengers" ItemsSource="{Binding}" Grid.ColumnSpan="2" Margin="0,26,0,0" SelectionChanged="LBPassengers_SelectionChanged"/>
+        <Label Content="Customer ID" Grid.Column="2" HorizontalAlignment="Left" Margin="117,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="LabelFlightID" Grid.Column="2" HorizontalAlignment="Left" Margin="114,87,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBCustID" Grid.Column="2" HorizontalAlignment="Left" Margin="200,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TBFlightID" Grid.Column="2" HorizontalAlignment="Left" Margin="200,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="BtnAdd" Content="Insert" Grid.Column="2" HorizontalAlignment="Left" Margin="83,154,0,0" VerticalAlignment="Top" Width="71" Click="BtnAdd_Click"/>
+        <Button x:Name="BtnUpdate" Content="Update" Grid.Column="2" HorizontalAlignment="Left" Margin="181,154,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.021,-0.946" Width="79" Click="BtnUpdate_Click"/>
+        <Button x:Name="BtnDlt" Content="Delete" Grid.Column="2" HorizontalAlignment="Left" Margin="293,154,0,0" VerticalAlignment="Top" Width="76" Click="BtnDlt_Click"/>
+
+    </Grid>
+</Window>
